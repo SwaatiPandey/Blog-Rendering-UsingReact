@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navigation.css";
-import logo from "../images/header-logo.png";
+import logo from "../image/header-logo.png";
 class Navigation extends Component {
   render() {
     return (
@@ -9,10 +9,10 @@ class Navigation extends Component {
         <img className="logo" src={logo} alt="logo" />
         <ul className="links">
           <li>
-            <Link to="/signup">Signup</Link>
+            <Link to="/blog">Blog</Link>
           </li>
           <li>
-            <Link to="/login">Login </Link>
+            <Link to="/blogdetails">Blog Detail </Link>
           </li>
         </ul>
       </div>

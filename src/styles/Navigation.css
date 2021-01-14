@@ -36,7 +36,7 @@ padding-right: 10px;
 }
 
 .links li a {
-	--fill-color:teal;
+	--fill-color: white;
 	padding: 2px 0;
 	font-size: 2rem;
 	letter-spacing: 2;

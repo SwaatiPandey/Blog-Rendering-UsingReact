@@ -1,0 +1,39 @@
+.blogDetail-container
+{
+    border: 2px solid black;
+    width: 90vw;
+    height: auto;
+margin: 0px auto;
+margin-top: 12vh;
+padding-top: 10px;
+    
+}
+.blogDetail-card{
+    border: 2px solid black;
+    width: 50vw;
+    height: 50vh;
+     display: flex;
+    justify-content: space-between;
+    flex-direction: column; 
+    margin-top: 10px;
+border-radius: 10px;
+background-color: black;
+}
+.blogDetail-card h3,p{
+    color: white;
+}
+.blogDetail-card h3
+{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.blogDetail-card p{
+    padding-left: 10px;
+}
+.blogDetail-image
+{
+    border-radius: 10px;
+    width: 50vw;
+    height: 50vh;
+    background-size: cover;
+}
