@@ -1,4 +1,4 @@
-.blogDetail-container
+/* .blogDetail-container
 {
     border: 2px solid black;
     width: 90vw;
@@ -6,12 +6,16 @@
 margin: 0px auto;
 margin-top: 12vh;
 padding-top: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
     
 }
 .blogDetail-card{
     border: 2px solid black;
     width: 50vw;
-    height: 50vh;
+    height: auto;
      display: flex;
     justify-content: space-between;
     flex-direction: column; 
@@ -36,4 +40,31 @@ background-color: black;
     width: 50vw;
     height: 50vh;
     background-size: cover;
+}
+aside{
+    width: 20vw;
+    height: 60vh;
+    color: black;
+} */
+
+.blogDetail1-card{
+    border: 2px solid black;
+    width: 50vw;
+    height: auto;
+     display: flex;
+    justify-content: space-between;
+    flex-direction: column; 
+    margin-top: 10px;
+border-radius: 10px;
+background-color: black;
+}
+aside{
+    background-color: blue;
+    width: 30vw;
+    height: 70vh;
+}
+.main
+{
+    display: flex;
+    flex-wrap: wrap;
 }

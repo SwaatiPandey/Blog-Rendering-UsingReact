@@ -1,7 +1,8 @@
 import { Component } from "react";
+import {Link} from "react-router-dom";
 import blogUrl from "../apicalls/apicall";
 import Navigation from "../components/Navigation";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 import "../styles/Blog.css";
 class Blog extends Component {
   state = {
@@ -22,38 +23,24 @@ class Blog extends Component {
   render() {
     return (
       <div className="blog">
-           <Navigation/> 
-           <div className="blog-container">
-          
-        {this.state.blog.map((blog) => {
-          return (
-           
-            <div key={blog.id}>
-          <div className="blog-card">    
-            
-            <h3>Title : {blog.title}</h3>
-              <p>Author : {blog.author}</p>
-              <img className="blog-image" src={blog.imageUrl} alt="" />
+        <Navigation />
+        <div className="blog-container">
+          {this.state.blog.map((blog) => {
+            return (
+              <div key={blog.id}>
+                <Link to = {`/blog/${blog.id}`}>
+                <div className="blog-card">
+                  <h3>Title : {blog.title}</h3>
+                  <p>Author : {blog.author}</p>
+                  <img className="blog-image" src={blog.imageUrl} alt="" />
+                </div>
+                </Link>
               </div>
-            </div>
-           
-          );
-        })}
-         </div>
-       
-        {/* <div className="blog-card">
-          <div className="blog-image">
-            <img src="" alt="" />
-          </div>
-          <div className="blog-details">
-            <p>title</p>
-            <p>Author</p>
-          </div>
-        </
-        div>
-     */}
-     <Footer/>
-     </div>
+            );
+          })}
+        </div>
+        <Footer />
+      </div>
     );
   }
 }

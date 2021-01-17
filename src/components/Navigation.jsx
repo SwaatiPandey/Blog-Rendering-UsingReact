@@ -8,12 +8,13 @@ class Navigation extends Component {
       <div className="navbar">
         <img className="logo" src={logo} alt="logo" />
         <ul className="links">
+        <li>
+            <Link to="/">Home </Link>
+          </li>
           <li>
             <Link to="/blog">Blog</Link>
           </li>
-          <li>
-            <Link to="/blogdetails">Blog Detail </Link>
-          </li>
+         
         </ul>
       </div>
     );

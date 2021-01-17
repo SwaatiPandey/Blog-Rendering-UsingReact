@@ -1,46 +1,91 @@
-// import { Component } from "react";
-// import Footer from "../components/Footer";
-// import Navigation from "../components/Navigation";
-// import blogUrl from "../apicalls/apicall";
-// import "../styles/Footer.css";
-// import "../styles/Navigation.css";
+import { Component } from "react";
+import { Link } from "react-router-dom";
+import Navigation from "../components/Navigation";
+import blogUrl from "../apicalls/apicall";
+import "../styles/BlogDetails.css";
 
-// class BlogDetails extends Component {
-//   state = {
-//     blog: [],
-//   };
-//   componentDidMount = () => {
-//     // fetch(blogUrl+id)
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .then((data) => {
-//       this.setState({ employees: data });
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-//   };
-//   render() {
-//   return (
-//       <div className="blog-container">
-//         <Navigation />
-//         <div className="blog-card">
-//           <div className="blog-image">
-//             <img src="" alt="" />
-//           </div>
-//           <div className="blog-details">
-//             <p>title</p>
-//             <p>Author</p>
-//             <p>content</p>
-//           </div>
-//           <aside>
-//             <p> Realted links</p>
-//           </aside>
-//         </div>
-//         <Footer />
-//       </div>
-//     );
-//   }
-// }
-// export default BlogDetails;
+class BlogDetails extends Component {
+  state = {
+    blog: {},
+    status: "",
+    blogId: "",
+  };
+  componentDidMount = () => {
+    fetch(blogUrl + this.props.match.params.id)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({
+          blog: data.data[0],
+          status: "Successful",
+          blogId: data.data[0].id,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  componentDidUpdate = () => {
+    if (this.state.blogId !== this.props.match.params.id) {
+      fetch(blogUrl + this.props.match.params.id)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          this.setState({
+            blog: data.data[0],
+            status: "Successful",
+            blogId: data.data[0].id,
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
+  render() {
+    return (
+      <div>
+        <Navigation />
+        {this.state.status === "Successful" ? (
+          
+            <div className="blogDetail1-card">
+              <div className="section1">
+              <div key={this.state.blog.id}>
+                <div>
+                  <h3>Title : {this.state.blog.title}</h3>
+                  <p>Author : {this.state.blog.author}</p>
+                  <img
+                    className="blogDetail-image"
+                    src={this.state.blog.imageUrl}
+                    alt=""
+                  />
+                  <p>{this.state.blog.content}</p>
+                </div>
+              </div>
+              </div>
+              <div className= "section2">
+              <aside>
+                <h3>Links</h3>
+                {this.state.blog.links.map((link, i) => {
+                  return (
+                    <div key={i}>
+                      <Link to={`/blog/${link.id}`}>
+                        <p>{link.title}</p>
+                      </Link>
+                    </div>
+                    </div>
+                  );
+                })}
+              </aside>
+            </div>
+        
+        ) : (
+          <h1>Loading</h1>
+        )}
+        </div>
+    );
+  }
+}
+export default BlogDetails;
