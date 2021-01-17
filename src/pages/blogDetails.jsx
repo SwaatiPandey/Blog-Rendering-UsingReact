@@ -65,7 +65,7 @@ class BlogDetails extends Component {
                 </div>
               </div>
               </div>
-              <div className= "section2">
+              
               <aside>
                 <h3>Links</h3>
                 {this.state.blog.links.map((link, i) => {
@@ -74,7 +74,6 @@ class BlogDetails extends Component {
                       <Link to={`/blog/${link.id}`}>
                         <p>{link.title}</p>
                       </Link>
-                    </div>
                     </div>
                   );
                 })}
