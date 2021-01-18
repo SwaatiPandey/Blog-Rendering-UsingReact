@@ -49,9 +49,8 @@ class BlogDetails extends Component {
       <div>
         <Navigation />
         {this.state.status === "Successful" ? (
-          
-            <div className="blogDetail1-card">
-              <div className="section1">
+          <div className="blogDetail1-card">
+            <div className="section1">
               <div key={this.state.blog.id}>
                 <div>
                   <h3>Title : {this.state.blog.title}</h3>
@@ -64,26 +63,24 @@ class BlogDetails extends Component {
                   <p>{this.state.blog.content}</p>
                 </div>
               </div>
-              </div>
-              
-              <aside>
-                <h3>Links</h3>
-                {this.state.blog.links.map((link, i) => {
-                  return (
-                    <div key={i}>
-                      <Link to={`/blog/${link.id}`}>
-                        <p>{link.title}</p>
-                      </Link>
-                    </div>
-                  );
-                })}
-              </aside>
             </div>
-        
+            <aside>
+              <h3>Links</h3>
+              {this.state.blog.links.map((link, i) => {
+                return (
+                  <div key={i}>
+                    <Link to={`/blog/${link.id}`}>
+                      <p>{link.title}</p>
+                    </Link>
+                  </div>
+                );
+              })}
+            </aside>
+          </div>
         ) : (
           <h1>Loading</h1>
         )}
-        </div>
+      </div>
     );
   }
 }
