@@ -47,40 +47,42 @@ class BlogDetails extends Component {
   render() {
     return (
       <div>
-        <Navigation />
+        <Navigation/>
         {this.state.status === "Successful" ? (
-          <div className="blogDetail1-card">
-            <div className="section1">
+          
+            <div className="blogDetails-card">
+          
               <div key={this.state.blog.id}>
                 <div>
                   <h3>Title : {this.state.blog.title}</h3>
                   <p>Author : {this.state.blog.author}</p>
                   <img
-                    className="blogDetail-image"
+                    className="blogDetais-image"
                     src={this.state.blog.imageUrl}
                     alt=""
                   />
                   <p>{this.state.blog.content}</p>
                 </div>
               </div>
+
+              <aside>
+                <h2>Links</h2>
+                {this.state.blog.links.map((link, i) => {
+                  return (
+                    <div key={i}>
+                      <Link to={`/blog/${link.id}`}>
+                        <p>{link.title}</p>
+                      </Link>
+                    </div>
+                  );
+                })}
+              </aside>
             </div>
-            <aside>
-              <h3>Links</h3>
-              {this.state.blog.links.map((link, i) => {
-                return (
-                  <div key={i}>
-                    <Link to={`/blog/${link.id}`}>
-                      <p>{link.title}</p>
-                    </Link>
-                  </div>
-                );
-              })}
-            </aside>
-          </div>
+        
         ) : (
           <h1>Loading</h1>
         )}
-      </div>
+        </div>
     );
   }
 }
