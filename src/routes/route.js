@@ -2,6 +2,7 @@ import { Component } from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Blog from "../pages/blog";
 import BlogDetails from "../pages/blogDetails";
+import Error from "../pages/error";
 import Home from "../pages/home";
 
 class Router extends Component {
@@ -19,6 +20,7 @@ class Router extends Component {
                 return <BlogDetails {...props} />;
               }}
             />
+            <Route component={Error} />
           </Switch>
         </BrowserRouter>
       </div>

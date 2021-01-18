@@ -39,9 +39,8 @@
 	  flex-wrap: wrap;
 	}
 	.logo {
-	  margin: 0.5rem;
-	  width: auto;
-	  height: 2rem;
+	  width: 20vw;
+	  height: auto;
 	}
   }
   
@@ -52,5 +51,8 @@
 	  flex-direction: column;
 	  justify-content: center;
 	  align-items: center;
+	}
+	.logo{
+		width: 50vw;
 	}
   }

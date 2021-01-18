@@ -1,15 +1,17 @@
-body{
-    background-color: rgb(233, 248, 248);
-}
 .main-div{
-    height: 80vh;
     text-align: center;
+    margin: 30vh auto;
+    width: 80vw;
+    height: auto;
+    font-size: 50px;
+    background-color: black;
 }
-h1{
-    padding-top: 15vh;
-    font-size: 60px;
-}
+
 .para {
 padding-top: 5vh;
 font-size: 40px;
+padding-top: 10vh;
+}
+.Typewriter{
+    color: white;
 }

@@ -12,7 +12,7 @@ class Navigation extends Component {
             <Link to="/">Home </Link>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link to="/blog">Blogs</Link>
           </li>
          
         </ul>
