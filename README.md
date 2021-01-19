@@ -26,7 +26,7 @@ For BACKEND : express,mongoose,uniquid
 FRONTEND: It has following folders:Api call, which contains url of the hosted api. Component which contains footer and navigation part.Pages contains all the pages files including error page. Routes which contains all the routes.
 
 4.Demo: This is the link of hosted backend: 
-http://blog-backend-hosting.herokuapp.com/blogs
+https://blog-backend-hosting.herokuapp.com/blogs
 
 This is the link of project :-https://blog-rendering-using-react.swaatipandey.vercel.app/
 

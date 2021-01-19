@@ -1,2 +1,2 @@
-const  blogUrl = "http://blog-backend-hosting.herokuapp.com/blogs/";
+const  blogUrl = "https://blog-backend-hosting.herokuapp.com/blogs/";
 export default blogUrl;
